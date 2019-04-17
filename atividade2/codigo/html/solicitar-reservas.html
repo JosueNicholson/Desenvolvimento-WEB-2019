@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Solicitar reservas</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+    <div class="head">
+        <h1>Solicite sua reserva!</h1>
+        <div class="menu">
+            <a class="menu-item" href="hotel.html" target="_blank">O hotel</a>
+            <a class="menu-item" href="quartos.html" target="_blank">Os quartos</a>
+            <a class="menu-item" href="solicitar-reservas.html" target="_blank">Solicitar reservas</a>
+        </div>
+    </div>
+    <div>
+        <p>Para solicitar uma reserva, basta preencher o formulário abaixo:</p>
+        <form class="solicitar-reserva-form"> 
+            <div class="left-form">
+                <strong>Nome completo:</strong><br>
+                <input type="text" name="nome-completo"><br>
+                <strong>CPF(Sem traços e pontos):</strong><br>
+                <input type="text" name="cpf"><br>
+                <strong>Telefone: </strong><br>
+                <input type="text" name="telefone"><br>
+                <strong>Email:</strong><br>
+                <input type="text" name="email"><br>
+                <strong>Data de entrada:</strong><br>
+                <input type="date" name="data-entrada"><br>
+                <strong>Data de saída:</strong><br>
+                <input type="date" name="data-saida"><br>
+            </div>
+            <div class="right-form">
+                <strong>Quantidade de pessoas:</strong> 
+                <select name="qtd-pessoas">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select><br>
+                <strong>Suíte pretendida:</strong>  
+                <select name="qtd-pessoas">
+                    <option value="luxo">luxo</option>
+                    <option value="premium">premium</option>
+                    <option value="presidencial">presidencial</option>
+                </select><br>
+                <strong>Forma de Pagamento:</strong><br><br>
+                <input type="radio" name="pagamento" value="cartao-credito"> Cartão de Crédito <br>
+                <input type="radio" name="pagamento" value="cartao-debito"> Cartão (Débito) <br>
+                <input type="radio" name="pagamento" value="boleto"> Boleto Bancário <br>
+                <input type="submit" value="Enviar" onclick="alert('reserva realizada!')">
+            </div>
+        </form>
+    </div>
+    <div id="rodape">
+            <p>Feito por: Josué Nicholson Girão Silva</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/estiloCarrinho.css">
+    <title>Carrinho de compras</title>
+</head>
+<body>
+    <div id="carrinho">
+        <h1>Cadastro de itens</h1>
+        <form>
+            nome do produto: <input type="text" id="nomeProduto"><br>
+            preço do produto: <input type="number"  id="precoProduto"><br>
+            quantidade: <input type="number" id="qtdProduto"><br>
+            <button type="button" id="botaoCadastrar">Cadastrar Item</button><br>
+        </form>
+
+        <table>
+            <caption>Lista de Itens</caption>
+            <tr>
+                <th>Nome do produto</th>
+                <th>Preco do produto</th>
+                <th>Quantidade</th>
+                <th>Total item</th>
+            </tr>
+        </table>
+        <b>total:</b> <input type="text" id="total">
+    </div>
+
+    <script src="../js/carrinho.js"></script>
+</body>
+</html>

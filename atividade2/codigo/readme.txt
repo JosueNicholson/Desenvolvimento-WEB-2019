@@ -1,0 +1,1 @@
+eu não sei usar a propriedade "clear" 

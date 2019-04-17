@@ -1,0 +1,44 @@
+h1{
+    text-align: center;
+}
+input{
+    margin-top: 10px;
+    width: 50%;
+}
+table, th, td {
+    margin-top: 15px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+  }
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+table th {
+    background-color: rgb(39, 100, 31);
+    color: white;
+}
+#botaoCadastrar{
+    margin: auto;
+    display: block;
+    width: 50%;
+    margin-top: 25px;
+    padding: 10px;
+
+}
+#qtdProduto{
+    margin-left: 39px;
+}
+#carrinho{
+    background-color: white;
+    width: fit-content;
+}
+#total{
+    margin-bottom: 15px;
+}

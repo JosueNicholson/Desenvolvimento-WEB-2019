@@ -1,0 +1,15 @@
+/*h2 ~ p{
+    color: red;
+}
+h2 + p{
+    color: green;
+}
+article > h1{
+    color: palevioletred;
+}*/
+p{
+    color: gold;
+}
+p:not(.especial){
+    color: gray;
+}

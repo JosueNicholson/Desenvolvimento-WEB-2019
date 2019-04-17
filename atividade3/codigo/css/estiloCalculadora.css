@@ -1,0 +1,38 @@
+body{
+    background-image: url(../img/background.jpg);
+    margin: 0px;
+}
+input{
+    margin-top: 15px;
+}
+button{
+    margin-top: 15px;
+    width: 244px;
+}
+h1{
+    margin: 0px;
+}
+div h1{
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+.botoes{
+    font-family: 'Gloria Hallelujah', cursive;
+    width: -webkit-fill-available;
+    font-size: large;
+}
+#calculadora{
+    font-family: 'Gloria Hallelujah', cursive;
+    margin: auto;
+    background: white;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 20px;
+
+}
+#result{
+    margin-bottom: 10px;
+}
+#numero1{
+    margin-left: 5px;
+}

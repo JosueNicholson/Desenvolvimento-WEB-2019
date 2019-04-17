@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+h1{
+    margin-top: 0px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+}
+p{
+    font-size: 20px;
+}
+table, th, td{
+    border: 1px solid black;
+}
+p.rosa{
+    background-color: rgb(243, 205, 212);
+}
+input{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+select{
+    margin-top: 10px;
+    margin-bottom: 15px; 
+}
+img{
+    width: 243px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+figure{
+    background: rgba(243, 205, 212, 0);
+    margin: auto;
+    display: inline-block;
+}
+figure:hover{
+    background: rgba(243, 205, 212, 1);
+    transition-duration: 0.5s;
+}
+figcaption{
+    text-align: center;
+    font-size: 20px;
+}
+.quartos-img{
+    margin-left: 40px;
+}
+.img-figure{
+    padding: 10px;
+} 
+.head{
+    padding-bottom: 20px;
+    background-color: rgb(243, 205, 212);
+}
+.instalacoes-img{
+    width: 253px;
+}
+.solicitar-reserva-form{
+    width: 100%;
+    height: 400px;      
+}
+.left-form{
+    float: left;
+    width: 500px;
+}
+.menu{
+    display: flex;
+}
+.menu-item{
+    background: white;
+    border: 1px solid;
+    padding: 10px;
+    width: 132.62px;
+    text-align: center;
+}
+#rodape{
+    margin-top: 20px;
+    background-color: rgb(243, 205, 212);
+}
+#contato{
+    margin-top: 20px;
+    font-family: "Anton", sans-serif;
+}
+#p-descricao-geral{
+    margin-top: 40px;
+}

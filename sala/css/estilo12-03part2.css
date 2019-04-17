@@ -1,0 +1,15 @@
+li:first-child{
+    color: red;
+}
+li:nth-child(3){
+    color: aqua;
+}
+li:nth-child(2n){
+    color: green;
+}
+li:nth-child(2n+1){
+    color: yellow;
+}
+p::first-letter{
+    font-size: 200%;
+}
