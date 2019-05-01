@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Playfair+Display');
+
+#special{
+    min-height: 70vh;
+}
+#form-div{
+    z-index: 1;
+    background-color: white;
+    padding: 0px 10px 15px 10px;
+    border-radius: 10px;
+    width: max-content;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+button{
+    color: rgb(97, 56, 2);
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    background-color: white;
+    border: 1px solid rgb(97, 56, 2);
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    margin-top: 10px;
+}
+button:hover{
+    cursor: pointer;
+}
+div-form p{
+    color: rgb(97, 56, 2);
+    font-family: 'Playfair Display', serif;
+    margin-top: 10px;
+}
+#form-title{
+    color: rgb(97, 56, 2);
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+input, textarea {
+    font-family: 'Playfair Display', serif;
+    margin-top: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #bfbbbb;
+}
+form{
+    width: inherit;
+    height: inherit;
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Playfair+Display');
+
+#main-text{
+    color: white;
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    padding: 40px 0;
+    text-align: start;
+    margin-left: 40px;
+}
+.about{
+
+    color: white;
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    text-align: justify;
+    padding: 0 40px;
+}
+.logo{
+    font-family: 'Crimson Text', serif;
+    font-size: 50px;
+    border: 1px solid white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: fit-content;
+    color: white;
+}

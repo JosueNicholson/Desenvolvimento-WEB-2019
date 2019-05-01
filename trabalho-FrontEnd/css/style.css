@@ -6,16 +6,8 @@
 body, html {
     height: 100%;
 }
-
-#div-container{
-    position: relative;
-    min-height: 100%;
-}
-#restaurant-name{
-    position: absolute;
-    left: 10%; 
-    top: 5%; 
-    transform: translate(-50%,-50%);
+.main-wrapper{
+    min-height: 80vh;
 }
 .bgimg {
     background-image: url('../img/background-image-teste.jpg');
@@ -23,19 +15,24 @@ body, html {
     background-position: center;
     background-size: cover;
 }
-#restaurant-name p{
+#restaurant-name {
     font-family: 'Crimson Text', serif;
     border: 1px solid white;
     padding: 5px 5px 5px 5px;
     color: white;
     font-size: 25px;
+
 }
 .grid-container {
     display: flex;
-    justify-content: flex-end;
     background-color: transparent !important;
     padding: 20px;
     z-index: 1;
+    align-items: center;
+    justify-content: space-between;
+}
+.grid-items{
+    display: flex;
 }
 .grid-item {
     text-align: center;
@@ -50,9 +47,9 @@ body, html {
 .grid-item a{
     font-family: 'Playfair Display', serif;
     color: white;
+    padding: 10px 45px;
     font-size: 20px;
     border:none;
-    padding: 6px 55px;
     vertical-align:middle;
     overflow:hidden;
     text-decoration:none;
@@ -60,42 +57,15 @@ body, html {
     cursor:pointer;
     white-space:nowrap;
 }
-#imgs-mains > figure > img{
-    width: 160px;
-    height: 160px;
-    border: 2px solid white;
-    border-radius: 50%;
-}
-
-#imgs-mains > figure > img:hover{
-
-}
-#imgs-mains > figure{
-    padding-right: 30px;
-    display: inline-block;
-}
-#imgs-mains > figure > figcaption{
-    text-align: center;
+footer p{
     font-family: 'Playfair Display', serif;
+    margin-top: 0;
     color: white;
 }
-.valor{
-    margin-top: 10px;
-}
-#imgs-mains{
-    position: absolute;
+footer{
     display: flex;
-    left: 50%;
-    top: 70%;
-    transform: translate(-50%,-50%);
-}
-#main-text{
-    position: absolute;
-    display: flex;
-    left: 50%;
-    top: 40%;
-    color: white;
-    font-size: 50px;
-    font-family: 'Playfair Display', serif;
-    transform: translate(-50%,-50%);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-evenly;
 }

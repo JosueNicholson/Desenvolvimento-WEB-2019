@@ -1,0 +1,56 @@
+#imgs-mains div {
+    display: table !important;
+    width: 81%;
+}
+.fixed{
+    display: inline-block;
+}
+.hidden{
+    display: none;
+}
+button{
+    display: flex;
+    margin: auto;
+    background: transparent !important;
+    color: white;
+    border: 1px solid white;
+    padding: 5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#main-text{
+    color: white;
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    padding: 50px 0;
+}
+#imgs-mains div{
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+#imgs-mains div > figure{
+    padding-right: 30px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+#imgs-mains div > figure > img{
+    width: 160px;
+    height: 160px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+#imgs-mains div > figure > figcaption{
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+
+.valor-prato{
+    margin-top: 10px;
+}

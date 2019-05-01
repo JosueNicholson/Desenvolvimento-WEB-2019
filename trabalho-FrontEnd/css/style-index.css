@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Playfair+Display');
+
+
+#main-text{
+    color: white;
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    padding: 50px 0;
+}
+#main{
+    display: flex;
+    flex-direction: column;
+}
+#imgs-mains{
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+#imgs-mains > figure{
+    display: inline-block;
+    padding-right: 30px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+#imgs-mains > figure > img{
+    width: 160px;
+    height: 160px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+#imgs-mains > figure > figcaption{
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+
+.valor-prato{
+    margin-top: 10px;
+}
