@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+.restaurantName{
+    font-family: 'Playfair Display', serif;
+    color: white;
+}

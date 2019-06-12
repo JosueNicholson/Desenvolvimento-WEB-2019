@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>pagina listagem</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+</head>
+<body>
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+
+      <th scope="col">Codigo</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each = "person : ${listaDePessoas}">
+      <td th:text="${person.codigo}" ></td>
+      <td th:text="${person.nome}" ></td>
+      <td th:text="${person.time}" ></td>
+      <td th:text="${{person.dataNascimento}}" ></td>
+      <td> <a th:href="@{/person/remove/{codigo}(codigo = ${person.codigo})}"> <button type="button" class="btn btn-secondary">Excluir</button> </a></td>
+	  <td> <a class="btn btn-primary" th:href="@{/person/update/{codigo}(codigo = ${person.codigo})}">Update</a></td>
+	  <td> <img width="200" height="200" th:src="@{'/images/'+${person.nome}+.png}"> </td>
+    </tr>
+
+  </tbody>
+</table>
+</body>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+</html>
