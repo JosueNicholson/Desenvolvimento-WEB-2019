@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<form action="/person/save" method="POST" th:object="${pessoa}" enctype="multipart/form-data">
+	<form action="/person/save" method="POST" th:object="${person}" enctype="multipart/form-data">
 	
 		<div class="alert alert-success" role="alert" th:if="${!#strings.isEmpty(mensagem)}">
 		  <span th:text="${mensagem}"></span>

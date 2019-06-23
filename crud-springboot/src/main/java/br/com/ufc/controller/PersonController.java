@@ -26,7 +26,7 @@ public class PersonController {
 	@RequestMapping("/form")
 	public ModelAndView form() {
 		ModelAndView mv = new ModelAndView("form");
-		mv.addObject("pessoa", new Person());
+		mv.addObject("person", new Person());
 		return mv;
 	}
 	

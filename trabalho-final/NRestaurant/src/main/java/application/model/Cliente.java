@@ -1,7 +1,8 @@
-package model;
+package application.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +13,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+@Entity
 public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,23 +31,28 @@ public class Cliente {
 	@NotBlank(message = "preencha o campo senha")
 	private String senha;
 	
+	@NotBlank(message = "preencha o campo e-mail")
+	private String email;
+	
 	@NotNull(message = "data de nascimento não pode ser nula")
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataDeNascimento;
 
-	public Cliente(@NotBlank(message = "preencha o campo nome") String nome,
+	/*public Cliente(@NotBlank(message = "preencha o campo nome") String nome,
 			@NotBlank(message = "preencha o campo cpf") String cpf,
 			@NotBlank(message = "preencha o campo endereço") String endereco,
 			@NotBlank(message = "preencha o campo senha") String senha,
-			@NotNull(message = "data de nascimento não pode ser nula") Date dataDeNascimento) {
+			@NotNull(message = "data de nascimento não pode ser nula") Date dataDeNascimento,
+			@NotBlank(message = "preencha o campo e-mail") String email) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.endereco = endereco;
 		this.senha = senha;
 		this.dataDeNascimento = dataDeNascimento;
+		this.email = email;
 	}
-
+*/
 	public String getNome() {
 		return nome;
 	}
@@ -88,5 +95,13 @@ public class Cliente {
 
 	public long getId() {
 		return id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

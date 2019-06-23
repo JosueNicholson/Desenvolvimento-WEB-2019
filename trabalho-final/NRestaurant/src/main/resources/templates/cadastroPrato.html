@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/general-style.css">
+<title>Cadastrar Prato</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <h3 class="restaurantName">N Restaurant</h3>
+        <div class="navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="./pagina-inicial.html">Home</a>
+                <a class="nav-item nav-link active" href="#">Pratos</a>
+                <a class="nav-item nav-link" href="./cadastro.html">Cadastro</a>
+            </div>
+        </div>
+    </nav>
+    <div class="alert alert-success" role="alert" th:if="${!#strings.isEmpty(mensagem)}">
+		<span th:text="${mensagem}"></span>
+	</div>
+	<div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+		<div th:each="detailedError : ${#fields.detailedErrors()}">
+			<span th:text="${detailedError.message}"></span>
+		  </div>
+	</div>
+    <form action="/prato/salvar" method="post" th:object="${prato}" enctype="multipart/form-data">
+         <div class="form-group">
+         	<label >Nome:</label>
+          	<input type="text" class="form-control" name="nome" placeholder="Exp: Canjica">
+        </div>
+        <div class="form-group">
+         	<label >Valor:</label>
+          	<input type="number" class="form-control" name="valor" placeholder="Exp: 50.00">
+        </div>
+        <div class="form-group">
+         	<label >Selecione a foto:</label>
+          	<input type="number" class="form-control-file" name="imagem" placeholder="Exp: 50.00">
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar Prato</button>
+         
+    </form>
+    <footer>
+            <p>Telefone: (88) 3422-6323 </p>
+            <p>Endereço: Av. Plácido Castelo, 223, Centro, Quixadá.</p>
+            <p>Powered by Josué Nicholson</p>
+    </footer>
+</body>
+<script src="/js/bootstrap.min.js"> </script>
+</html>
