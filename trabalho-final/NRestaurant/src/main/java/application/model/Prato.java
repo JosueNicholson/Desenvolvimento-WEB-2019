@@ -13,18 +13,25 @@ public class Prato {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@NotNull(message = "preencha o campo 'valor'")
-	private double valor;
+	@NotNull(message = "preencha o campo valor")
+	private float valor;
 	
-	@NotBlank(message = "preencha o campo 'nome'")
+	@NotBlank(message = "preencha o campo nome")
 	private String nome;
-	
-	
-	public double getValor() {
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public float getValor() {
 		return valor;
 	}
 
-	public void setValor(double valor) {
+	public void setValor(float valor) {
 		this.valor = valor;
 	}
 
@@ -35,6 +42,8 @@ public class Prato {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	
 
 
 	

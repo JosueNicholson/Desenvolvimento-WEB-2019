@@ -32,7 +32,7 @@ public class PratoController {
 	}
 	@PostMapping("/salvar")
 	public ModelAndView salvarPrato(@Validated Prato prato, BindingResult result, @RequestParam("imagem") MultipartFile imagem) {
-		ModelAndView mv = new ModelAndView("cadastrarPrato");
+		ModelAndView mv = new ModelAndView("cadastroPrato");
 		if(result.hasErrors()) {
 			return mv;
 		}
@@ -40,23 +40,23 @@ public class PratoController {
 		mv.addObject("mensagem", "Prato cadastrado com sucesso");
 		return mv;
 	}
-	@RequestMapping("/atualizar/{id}")
-	public ModelAndView atualizarPrato(@PathVariable Long id) {
-		ModelAndView mv = new ModelAndView("algo");
-		Prato prato = pratoService.buscarPratoPorId(id);
-		return mv;
-	}
+//	@RequestMapping("/atualizar/{id}")
+//	public ModelAndView atualizarPrato(@PathVariable Long id) {
+//		ModelAndView mv = new ModelAndView("algo");
+//		Prato prato = pratoService.buscarPratoPorId(id);
+//		return mv;
+//	}
 	@GetMapping("/deletar/{id}")
 	public ModelAndView deletarPrato(@PathVariable Long id) {
 		pratoService.deletarPratoPorId(id);
-		ModelAndView mv = new ModelAndView("redirect:/praAlgumLugar");
+		ModelAndView mv = new ModelAndView("redirect:/prato/galeria");
 		return mv;
 	}
 	@RequestMapping("/galeria")
 	public ModelAndView listarPratos() {
 		ModelAndView mv = new ModelAndView("galeria");
 		List<Prato> pratos = pratoService.listarPratos();
-		mv.addObject("ListaDePratos", pratos);
+		mv.addObject("listaDePratos", pratos);
 		return mv;
 	}
 	

@@ -1,6 +1,7 @@
 package application.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import application.model.Pedido;
 
 @Entity
 public class Cliente {
@@ -38,21 +41,21 @@ public class Cliente {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataDeNascimento;
+	
+	private List<Pedido> pedidos;
 
-	/*public Cliente(@NotBlank(message = "preencha o campo nome") String nome,
-			@NotBlank(message = "preencha o campo cpf") String cpf,
-			@NotBlank(message = "preencha o campo endereço") String endereco,
-			@NotBlank(message = "preencha o campo senha") String senha,
-			@NotNull(message = "data de nascimento não pode ser nula") Date dataDeNascimento,
-			@NotBlank(message = "preencha o campo e-mail") String email) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.endereco = endereco;
-		this.senha = senha;
-		this.dataDeNascimento = dataDeNascimento;
-		this.email = email;
+	public List<Pedido> getPedidos() {
+		return pedidos;
 	}
-*/
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
 	}
