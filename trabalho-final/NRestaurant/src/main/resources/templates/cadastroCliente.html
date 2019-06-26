@@ -14,17 +14,15 @@
     <h3 class="restaurantName">N Restaurant</h3>
     <div class=" navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" href="./pagina-inicial.html">Home</a> <!-- /home -->
-        <a class="nav-item nav-link" href="./galeria.html">Pratos</a> <!-- /prato/galeria -->
-        <a class="nav-item nav-link active" href="#">Cadastro</a> <!-- /cliente/cadastro -->
-        <a class="nav-item nav-link" href="#">Login</a> <!-- /cliente/login -->
+         <a class="nav-item nav-link" href="./pagina-inicial.html">Home</a> <!-- /home -->
+         <a class="nav-item nav-link" href="/prato/galeria">Pratos</a> <!-- /prato/galeria -->
+         <a class="nav-item nav-link active" href="/cliente/form">Cadastro</a>
+         <a class="nav-item nav-link" href="/cliente/logar">Login</a> <!-- /cliente/login -->
       </div>
     </div>
   </nav>
 
   <div class="container">
-
-
 	
     <form action="/cliente/salvar" method="POST" th:object="${cliente}">
 	   	<div class="alert alert-success" role="alert" th:if="${!#strings.isEmpty(mensagem)}">

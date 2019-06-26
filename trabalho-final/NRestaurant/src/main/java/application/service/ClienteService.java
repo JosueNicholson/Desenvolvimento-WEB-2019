@@ -19,7 +19,7 @@ public class ClienteService {
 	public void deletarClientePorId(Long clienteId) {
 		clienteRepository.deleteById(clienteId);
 	}
-	public void buscarClientePorId(Long clienteId) {
-		clienteRepository.getOne(clienteId);
+	public Cliente buscarClientePorId(Long clienteId) {
+		return clienteRepository.getOne(clienteId);
 	}
 }

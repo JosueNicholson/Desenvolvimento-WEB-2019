@@ -1,9 +1,11 @@
 package application.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import application.model.Prato;
 
@@ -13,8 +15,9 @@ public class Item {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Prato prato;
-	private float quantidade;
+	private int quantidade;
 	private float valorTotalItem;
 	
 	public Prato getPrato() {
@@ -29,14 +32,14 @@ public class Item {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public float getQuantidade() {
+	public int getQuantidade() {
 		return quantidade;
 	}
-	public void setQuantidade(float quantidade) {
+	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
 	public float getValorTotalItem() {
-		return valorTotalItem;
+		return this.prato.getValor() * this.quantidade;
 	}
 	public void setValorTotalItem(float valorTotalItem) {
 		this.valorTotalItem = valorTotalItem;

@@ -15,9 +15,9 @@
         <div class="navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="./pagina-inicial.html">Home</a> <!-- /home -->
-                <a class="nav-item nav-link active" href="#">Pratos</a> <!-- /prato/galeria -->
-                <a class="nav-item nav-link" href="./cadastroCLiente.html">Cadastro</a> <!-- /cliente/cadastro -->
-                <a class="nav-item nav-link" href="#">Login</a> <!-- /cliente/login -->
+                <a class="nav-item nav-link active" href="/prato/galeria">Pratos</a> <!-- /prato/galeria -->
+                <a class="nav-item nav-link" href="/cliente/form">Cadastro</a>
+                <a class="nav-item nav-link" href="/cliente/logar">Login</a> <!-- /cliente/login -->
             </div>
         </div>
     </nav>
@@ -37,8 +37,12 @@
 		      <td th:text="${prato.id}" ></td>
 		      <td th:text="${prato.nome}" ></td>
 		      <td th:text="${prato.valor}" ></td>
-		      <td> <img width="200" height="200" th:src="@{'/images/'+${prato.nome}+.png}"> </td>
+		      <td> <img class="img-fluid" width="200" height="200" th:src="@{'/images/'+${prato.nome}+.png}"> </td>
 		      <td> <a class="btn btn-secondary" th:href="@{/prato/deletar/{id}(id = ${prato.id})}">Excluir</a></td>
+		      <td> <a class="btn btn-primary" th:href="@{/carrinho/adicionarItemForm/{id}(id = ${prato.id})}">ADD
+		      			<!-- <img alt="" src="/img/plus.png"> -->
+		      		</a>
+		      </td>
 		    </tr>
 		
 		  </tbody>

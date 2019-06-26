@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/general-style.css">
+<title>Pedidos</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <h3 class="restaurantName">N Restaurant</h3>
+        <div class="navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="./pagina-inicial.html">Home</a> <!-- /home -->
+                <a class="nav-item nav-link" href="/prato/galeria">Pratos</a> <!-- /prato/galeria -->
+                <a class="nav-item nav-link" href="/cliente/form">Cadastro</a>
+                <a class="nav-item nav-link" href="/cliente/logar">Login</a> <!-- /cliente/login -->
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+    	<table class="table table-bordered" th:each="pedido : ${listaDePedidos}">
+			<thead class="thead-dark">
+			<tr>
+				<th scope="col">Pedido <span th:text="${pedido.id}"></span></th>
+			</tr>
+		    <tr>
+		
+		      <th scope="col">Codigo</th>
+		      <th scope="col">Nome do prato</th>
+		      <th scope="col">Quantidade</th>
+		      <th scope="col">Valor do item</th>
+		    </tr>
+		  	</thead>
+		  <tbody>
+		    <tr th:each = "item : ${pedido.itens}">
+		      <td th:text="${item.id}" ></td>
+		      <td th:text="${item.prato.nome}" ></td>
+		      <td th:text="${item.quantidade}" ></td>
+		      <td th:text="${item.valorTotalItem}"></td>
+		    </tr>
+		  </tbody>
+		</table>
+    </div>
+    <footer>
+            <p>Telefone: (88) 3422-6323 </p>
+            <p>Endereço: Av. Plácido Castelo, 223, Centro, Quixadá.</p>
+            <p>Powered by Josué Nicholson</p>
+    </footer>
+</body>
+<script src="/js/bootstrap.min.js"> </script>
+</html>
