@@ -1,13 +1,18 @@
 package application.model;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,15 +20,34 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
-import application.model.Pedido;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-public class Cliente {
+public class Cliente implements UserDetails {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 	
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(
+			name="clienteRoles",
+			joinColumns = @JoinColumn(
+					name = "clienteId", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(
+					name = "roleId", referencedColumnName = "papel"))
+	private List<Role> roles;
+
+	
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
 	@NotBlank(message = "preencha o campo nome")
 	private String nome;
 	
@@ -46,6 +70,7 @@ public class Cliente {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Pedido> pedidos;
+	
 
 	public List<Pedido> getPedidos() {
 		return pedidos;
@@ -55,7 +80,7 @@ public class Cliente {
 		this.pedidos = pedidos;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -99,7 +124,7 @@ public class Cliente {
 		this.dataDeNascimento = dataDeNascimento;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -109,5 +134,47 @@ public class Cliente {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return (Collection<? extends GrantedAuthority>) this.roles;
+	}
+
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return this.senha;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return this.email;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 }

@@ -55,9 +55,6 @@ public class ClienteController {
 	@RequestMapping("/logar")
 	public ModelAndView logar() {
 		ModelAndView mv = new ModelAndView("login");
-//		if(result.hasErrors()) {
-//			return mv;
-//		}
 		return mv;
 	}
 	@RequestMapping("/logout")

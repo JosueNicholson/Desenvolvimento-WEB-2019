@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.springframework.org/security/tags">
 
 <head>
     <meta charset="UTF-8">
@@ -14,12 +14,13 @@
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <h3 class="restaurantName">N Restaurant</h3>
-        <div class=" navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="./pagina-inicial.html">Home</a> <!-- /home -->
-                <a class="nav-item nav-link" href="/prato/galeria">Pratos</a> <!-- /prato/galeria -->
-                <a class="nav-item nav-link" href="/cliente/form">Cadastro</a>
-                <a class="nav-item nav-link" href="/cliente/logar">Login</a> <!-- /cliente/login -->
+                <a class="nav-item nav-link" href="./pagina-inicial.html">Home</a>
+                <a class="nav-item nav-link active" href="/prato/galeria">Pratos</a> 
+                <a class="nav-item nav-link" sec:authorize="!isAuthenticated()" href="/cliente/form">Cadastro</a>
+                <a class="nav-item nav-link" sec:authorize="!isAuthenticated()" href="/cliente/logar">Login</a> 
+                <a class="nav-item nav-link" sec:authorize="hasRole('ROLE_ADMIN')" href="/prato/cadastrar">Cadastrar Pratos</a>
             </div>
         </div>
     </nav>

@@ -6,8 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import application.model.Prato;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Item {
@@ -15,9 +14,14 @@ public class Item {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	private Prato prato;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Pedido pedido;
+
 	private int quantidade;
+
 	private float valorTotalItem;
 	
 	public Prato getPrato() {
@@ -39,11 +43,24 @@ public class Item {
 		this.quantidade = quantidade;
 	}
 	public float getValorTotalItem() {
-		return this.prato.getValor() * this.quantidade;
+		this.valorTotalItem = this.prato.getValor() * this.quantidade;
+		return valorTotalItem;
+				
 	}
 	public void setValorTotalItem(float valorTotalItem) {
 		this.valorTotalItem = valorTotalItem;
 	}
+	public Pedido getPedido() {
+		return pedido;
+	}
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
 	
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", prato=" + prato + ", pedido=" + pedido + ", quantidade=" + quantidade
+				+ ", valorTotalItem=" + valorTotalItem + "]";
+	}
 	
 }

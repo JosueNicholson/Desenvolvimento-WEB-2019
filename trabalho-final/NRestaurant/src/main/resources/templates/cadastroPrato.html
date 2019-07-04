@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.springframework.org/security/tags">
 <head>
 <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/general-style.css">
     <link rel="stylesheet" href="/css/cadastro-style.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"> </script>
 <title>Cadastrar Prato</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <h3 class="restaurantName">N Restaurant</h3>
-        <div class="navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="./pagina-inicial.html">Home</a> <!-- /home -->
-                <a class="nav-item nav-link" href="/prato/galeria">Pratos</a> <!-- /prato/galeria -->
-                <a class="nav-item nav-link" href="/cliente/form">Cadastro</a>
-                <a class="nav-item nav-link" href="/cliente/logar">Login</a> <!-- /cliente/login -->
-            </div>
-        </div>
-    </nav>
-
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="#">N Restaurant</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <a class="nav-item nav-link" href="./pagina-inicial.html">Home</a> 
+            <a class="nav-item nav-link active" href="/prato/galeria">Pratos</a> 
+            <a class="nav-item nav-link" sec:authorize="!isAuthenticated()" href="/cliente/form">Cadastro</a>
+            <a class="nav-item nav-link" sec:authorize="!isAuthenticated()" href="/cliente/logar">Login</a> 
+            <a class="nav-item nav-link" sec:authorize="hasRole('ROLE_ADMIN')" href="/prato/cadastrar">Cadastrar Pratos</a>
+            <a class="nav-item nav-link" href="/carrinho/visualizarCarrinho">Visualizar Carrinho</a>
+            <a class="nav-item nav-link" sec:authorize="isAuthenticated()" href="/cliente/logout">Logout</a>
+            <a class="nav-item nav-link" sec:authorize="isAuthenticated()" href="/pedido/visualizarPedidos">Visualizar Pedidos</a>
+	  </div>
+	</nav>
     <form action="/prato/salvar" method="post" th:object="${prato}" enctype="multipart/form-data">
 		<div class="alert alert-success" role="alert" th:if="${!#strings.isEmpty(mensagem)}">
 			<span th:text="${mensagem}"></span>
@@ -50,5 +57,4 @@
             <p>Powered by Josué Nicholson</p>
     </footer>
 </body>
-<script src="/js/bootstrap.min.js"> </script>
 </html>

@@ -28,6 +28,7 @@ public class PratoService {
 		pratoRepository.deleteById(id);
 	}
 	public Prato buscarPratoPorId(Long id) {
+
 		return pratoRepository.getOne(id);
 	}
 }

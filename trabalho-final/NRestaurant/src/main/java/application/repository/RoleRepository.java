@@ -3,9 +3,9 @@ package application.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import application.model.Prato;
+import application.model.Role;
 
 @Repository
-public interface PratoRepository extends JpaRepository<Prato, Long>{
+public interface RoleRepository extends JpaRepository<Role, String>{
 	
 }

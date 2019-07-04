@@ -11,6 +11,8 @@ import application.model.Item;
 @Component
 @SessionScope
 public class Carrinho {
+	
+	
 	private List<Item> itensDoCarrinho = new ArrayList<>();
 	private float valorTotalCarrinho;
 	

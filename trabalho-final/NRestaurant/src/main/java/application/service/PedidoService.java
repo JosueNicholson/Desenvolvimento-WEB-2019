@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import application.model.Cliente;
 import application.model.Pedido;
 import application.repository.PedidoRepository;
 
@@ -14,6 +15,8 @@ public class PedidoService {
 	private PedidoRepository pedidoRepository;
 	
 	public void salvarPedido(Pedido pedido) {
+		float total = pedido.getValorTotalPedido();
+		pedido.setValorTotalPedido(total);
 		pedidoRepository.save(pedido);
 	}
 	public void deletarPedido(Long id) {
@@ -24,5 +27,8 @@ public class PedidoService {
 	}
 	public Pedido buscarPedidoPorId(Long id) {
 		return pedidoRepository.getOne(id);
+	}
+	public List<Pedido> buscarPedidosPorCliente(Cliente cliente){
+		return pedidoRepository.findByCliente(cliente);
 	}
 }
